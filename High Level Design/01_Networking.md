@@ -143,6 +143,41 @@ sequenceDiagram
 
 ---
 
+## 7.1. QUIC – Modern Transport Protocol
+
+- **QUIC (Quick UDP Internet Connections):** A modern transport protocol developed by Google, now standardized by IETF.
+- **Built on UDP:** Runs over UDP but adds reliability, multiplexing, and security features similar to (and beyond) TCP.
+- **Designed for the modern web:** Powers HTTP/3 and is used by major services (Google, YouTube, Facebook, etc.).
+
+### Key Features
+
+- **Multiplexed Streams:** Multiple streams in a single connection, preventing head-of-line blocking.
+- **Built-in Encryption:** Always encrypted (TLS 1.3), no unencrypted mode.
+- **Faster Handshakes:** 0-RTT and 1-RTT connection setup, reducing latency.
+- **Connection Migration:** Survives IP changes (e.g., switching from Wi-Fi to mobile data).
+- **Congestion & Flow Control:** Advanced algorithms for efficient data transfer.
+- **Reliability:** Like TCP, but with improved performance for modern applications.
+
+### Use Cases
+
+- **HTTP/3:** The main transport for the latest web protocol.
+- **Video/Audio Streaming:** Low latency, high throughput.
+- **Mobile Applications:** Seamless connectivity during network changes.
+
+### QUIC vs TCP vs UDP
+
+| Feature      | TCP                        | UDP               | QUIC                         |
+| ------------ | -------------------------- | ----------------- | ---------------------------- |
+| Connection   | Oriented (3-way handshake) | Connectionless    | Oriented (0/1-RTT handshake) |
+| Reliability  | Guaranteed (ACK, retrans)  | Not guaranteed    | Guaranteed (ACK, retrans)    |
+| Ordering     | Yes                        | No                | Yes (per stream)             |
+| Multiplexing | No (head-of-line blocking) | No                | Yes (no head-of-line block)  |
+| Encryption   | Optional (TLS/SSL)         | Optional          | Always (TLS 1.3)             |
+| Speed        | Slower                     | Faster            | Fastest (low latency)        |
+| Use Cases    | Web, Email, Banking        | Gaming, Streaming | HTTP/3, Streaming, Mobile    |
+
+---
+
 ## 8. Summary Table
 
 | Feature     | TCP                        | UDP               |
